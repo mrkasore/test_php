@@ -1,0 +1,97 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.news {
+    display: flex;
+    flex-direction: column;
+    width: 739px;
+    align-items: flex-start;
+    gap: 30px;
+    position: relative;
+}
+
+.news .frame {
+    padding: 6px 18px;
+    background-color: var(--light-grey);
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.news .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--date-font-family);
+    font-weight: var(--date-font-weight);
+    color: var(--grey);
+    font-size: var(--date-font-size);
+    letter-spacing: var(--date-letter-spacing);
+    line-height: var(--date-line-height);
+    font-style: var(--date-font-style);
+}
+
+.news .div {
+    width: 739px;
+    height: 45px;
+    color: var(--brand-color);
+    font-size: var(--h2-font-size);
+    position: relative;
+    font-family: var(--h2-font-family);
+    font-weight: var(--h2-font-weight);
+    letter-spacing: var(--h2-letter-spacing);
+    line-height: var(--h2-line-height);
+    font-style: var(--h2-font-style);
+}
+
+.news .p {
+    position: relative;
+    width: 739px;
+    height: 110px;
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight);
+    color: var(--body-text);
+    font-size: var(--text-font-size);
+    letter-spacing: var(--text-letter-spacing);
+    line-height: var(--text-line-height);
+    font-style: var(--text-font-style);
+}
+
+.news .frame-2 {
+    padding: 16px 40px;
+    background-color: var(--brand-color);
+    border-radius: 50px;
+    border: 2px solid;
+    border-color: #9b407a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.news .text-wrapper-2 {
+    width: fit-content;
+    margin-top: -2px;
+    color: var(--white);
+    font-size: var(--button-text-font-size);
+    position: relative;
+    font-family: var(--button-text-font-family);
+    font-weight: var(--button-text-font-weight);
+    letter-spacing: var(--button-text-letter-spacing);
+    line-height: var(--button-text-line-height);
+    font-style: var(--button-text-font-style);
+}
+
+.news .arrow {
+    position: relative;
+    width: 27px;
+    height: 14.73px;
+    margin-right: -1px;
+}
