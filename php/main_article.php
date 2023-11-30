@@ -16,7 +16,7 @@
 
     echo '
     <div class="main-title-article">'.$row["title"].'</div>
-    <div>'.$row["announce"].'</div>
+    <div class="main-article">'.$row["announce"].'</div>
     ';
 
     // echo mysqli_fetch_array($result)["title"];

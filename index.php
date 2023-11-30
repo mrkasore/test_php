@@ -9,7 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <div class="img-div-logo">
+            <img src="/img/logo.svg" alt="logo">
+        </div>
+        <div class="label">
+            <div class="text-wrapper">ГАЛАКТИЧЕСКИЙ <br />ВЕСТНИК</div>
+        </div>
+    </header>
     <div class="main-image" style="background-image: url('images/<?php include './php/main_image.php'?>')">
         <?php include './php/main_article.php' ?>
     </div>
@@ -26,7 +33,9 @@
         </div>
     </div>
     
-    <footer></footer>
+    <footer>
+        <p class="text-wrapper-footer">© 2023 — 2412 «Галактический вестник»</p>
+    </footer>
     
 </body>
 </html>

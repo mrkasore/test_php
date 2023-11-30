@@ -3,14 +3,63 @@
     padding: 0;
 }
 
-header {
-    height: 100px;
-    background-color: black;
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/* HEADER */
+header {
+    height: 120px;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.img-div-logo {
+    padding-left: 10%;
+}
+
+.label {
+    width: 273px;
+    height: 74px;
+}
+
+.label .text-wrapper {
+    width: 273px;
+    top: 0;
+    left: 0;
+    font-family: "Segoe UI-Regular", Helvetica;
+    font-weight: 400;
+    color: #2c145e;
+    font-size: 28px;
+    letter-spacing: 3.5px;
+    line-height: 37px;
+}
+
+
+
+
+/* MAIN */
 .main-title-article {
-    font-size: 50px;
+    font-family: var(--h1-font-family);
+    font-weight: 60px;
+    color: #ffffff;
+    font-size: var(--h1-font-size);
+    letter-spacing: var(--h1-letter-spacing);
 }
 .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -25,13 +74,24 @@ header {
 }
 .main-image {
     /* background-image: url(images/0cdfb0183c985bea52e35b50e99f0909.jpg); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 430px;
     color: white;
     margin-bottom: 1rem;
+    padding-left: 10%;
 }
+
+.main-article {
+    font-size: 25px;
+}
+
+
+
 .news {
     display: none;
     flex-direction: column;
@@ -129,10 +189,9 @@ header {
 /* BUTTONS PAGES */
 
 .frame {
-    display: inline-flex;
-    align-items: flex-start;
+    display: flex;
+    justify-content: end;
     gap: 16px;
-    position: relative;
 }
 
 .frame .div-wrapper {
@@ -199,3 +258,15 @@ header {
     color: white;
 }
 
+
+/* FOOTER */
+footer {
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+.text-wrapper-footer {
+    font-size: 20px;
+    padding-left: 10%;
+}
