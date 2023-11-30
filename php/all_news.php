@@ -28,8 +28,9 @@
                 <p>'.$row["announce"].'</p>
             </div>
             
-            <div class="frame-2">
-            <div class="text-wrapper-1">ПОДРОБНЕЕ</div>
+            <div class="frame-2"">
+            <div class="text-wrapper-1"><a href="page2.php?id='.$row["id"].'"> ПОДРОБНЕЕ </a>
+            </div>
             <img class="arrow" src="img/arrow-1.svg" />
             </div>
         </div>
