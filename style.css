@@ -2,14 +2,25 @@
     margin: 0;
     padding: 0;
 }
+
+header {
+    height: 100px;
+    background-color: black;
+}
 .main-title-article {
     font-size: 50px;
+}
+.container {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.container>h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
 }
 .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-left: 10%;
-    padding-right: 10%;
     gap: 2rem;
 }
 .main-image {
@@ -17,11 +28,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 530px;
+    height: 430px;
     color: white;
+    margin-bottom: 1rem;
 }
 .news {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
@@ -90,9 +102,10 @@
     gap: 10px;
     position: relative;
     flex: 0 0 auto;
+    cursor: pointer;
 }
 
-.news .text-wrapper-2 {
+.news .text-wrapper-1 {
     width: fit-content;
     margin-top: -2px;
     color: var(--white);
@@ -113,4 +126,76 @@
 }
 
 
+/* BUTTONS PAGES */
+
+.frame {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+}
+
+.frame .div-wrapper {
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 23px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 50px;
+    border: 2px solid;
+    border-color: var(--brand-color);
+    
+}
+
+.frame .div-wrapper-arrow {
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 23px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 50px;
+    border: 2px solid;
+    border-color: var(--brand-color);
+    
+}
+.frame .div-wrapper:hover {
+    cursor: pointer;
+}
+.frame .div-wrapper-arrow {
+    cursor: pointer;
+}
+
+
+.frame .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -2px;
+    font-family: var(--button-text-font-family);
+    font-weight: var(--button-text-font-weight);
+    color: var(--brand-color);
+    font-size: var(--button-text-font-size);
+    letter-spacing: var(--button-text-letter-spacing);
+    line-height: var(--button-text-line-height);
+    font-style: var(--button-text-font-style);
+    pointer-events: none;
+}
+
+.frame .img {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.div-wrapper.active-page {
+    background-color: rgba(132, 24, 68, 1);
+}
+
+.div-wrapper.active-page > div {
+    color: white;
+}
 

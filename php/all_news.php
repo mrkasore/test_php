@@ -29,7 +29,7 @@
             </div>
             
             <div class="frame-2">
-            <div class="text-wrapper-2">ПОДРОБНЕЕ</div>
+            <div class="text-wrapper-1">ПОДРОБНЕЕ</div>
             <img class="arrow" src="img/arrow-1.svg" />
             </div>
         </div>
