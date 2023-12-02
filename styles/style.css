@@ -4,9 +4,15 @@
 }
 
 body {
+    right: 0;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    justify-content: space-between;
+    font-size: 20px;
+    gap: 2rem;
+    height: 100vh;
+    width: 100vw;
 }
 
 a {
@@ -15,18 +21,23 @@ a {
 }
 
 
-
 /* HEADER */
 header {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+header > div {
     height: 120px;
     display: flex;
     gap: 2rem;
     align-items: center;
 }
 
-.img-div-logo {
-    padding-left: 10%;
+.create-line {
+    margin-right: 10%;
 }
+
 
 .label {
     width: 273px;
@@ -71,6 +82,10 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+}
+
+.main-image-container {
+    height: 430px;
 }
 .main-image {
     /* background-image: url(images/0cdfb0183c985bea52e35b50e99f0909.jpg); */
@@ -152,10 +167,11 @@ header {
 
 .news .frame-2 {
     padding: 16px 40px;
-    background-color: var(--brand-color);
+    /* background-color: var(--brand-color); */
+    background-color: white;
     border-radius: 50px;
     border: 2px solid;
-    border-color: #9b407a;
+    border-color: var(--brand-color);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -165,10 +181,15 @@ header {
     cursor: pointer;
 }
 
+.frame-2 svg path {
+    fill: var(--brand-color);
+}
+
 .news .text-wrapper-1 {
     width: fit-content;
     margin-top: -2px;
-    color: var(--white);
+    /* color: var(--white); */
+    color: var(--brand-color);
     font-size: var(--button-text-font-size);
     position: relative;
     font-family: var(--button-text-font-family);
@@ -176,6 +197,16 @@ header {
     letter-spacing: var(--button-text-letter-spacing);
     line-height: var(--button-text-line-height);
     font-style: var(--button-text-font-style);
+}
+
+.frame-2:hover {
+    background-color: var(--brand-color);
+}
+.frame-2:hover .text-wrapper-1 {
+    color:white;
+}
+.frame-2:hover svg path {
+    fill: white;
 }
 
 .news .arrow {
@@ -225,11 +256,25 @@ header {
 }
 .frame .div-wrapper:hover {
     cursor: pointer;
+    background-color: rgb(153, 41, 86);
+}
+
+.div-wrapper:hover .text-wrapper-2 {
+    color: white;
 }
 .frame .div-wrapper-arrow {
     cursor: pointer;
+    padding: 16px 41px;
 }
 
+.frame .div-wrapper-arrow:hover {
+    background-color: var(--brand-color);
+}
+
+.div-wrapper-arrow:hover svg path {
+    fill: white;
+}
+ 
 
 .frame .text-wrapper-2 {
     position: relative;
@@ -260,13 +305,41 @@ header {
 
 
 /* FOOTER */
-footer {
+footer > div {
     display: flex;
-    align-items: center;
+    justify-content: center;
     height: 150px;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 2rem;
+
 }
+
 
 .text-wrapper-footer {
     font-size: 20px;
-    padding-left: 10%;
+}
+
+.create-line {
+    width: 100%;
+    border-top: 1px solid gray;
+    
+}
+
+.div-wrapper-arrow .hide {
+    opacity: 0;
+}
+
+
+@media (max-width: 550px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+    .label > .text-wrapper {
+        font-size: 15px;
+    }
+    .main-title-article {
+        font-size: 50px;
+    }
 }

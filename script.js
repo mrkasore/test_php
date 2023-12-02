@@ -4,6 +4,7 @@ let arrow = document.querySelector('.div-wrapper-arrow');
 
 let x = 4;
 let currentPage = 1;
+let arr = [];
 
 
 for (let i=0; i < 4; i++) {
@@ -17,52 +18,105 @@ btnPages.forEach(item => {
 
 function changePage(e) {
     console.log(e.target.innerText);
+
     btnPages = document.querySelectorAll('.div-wrapper');
     currentPage = e.target.innerText;
-    news.forEach(item => {
-        item.style.display = 'none';
-    });
-
-    //Сброс активных кнопок
-    btnPages.forEach(item => {
-        if(item.classList.contains('active-page')) {
-            item.classList.remove('active-page');
-        }
-    })
-
+    hideArrow(currentPage);
+    hideNews();
+    restartPagesBtn();
     e.target.classList.add('active-page');
-    for(let i = x*currentPage-4; i < x*currentPage; i++) {
-        news[i].style.display = 'flex';
-        console.log(x*e.target.innerText);
-    }
-
-    console.log(e.target);
+    currentPage = Number(e.target.innerText);
+    show4News(currentPage);
+    
+    console.log(currentPage);
         
     document.querySelector(".main").scrollIntoView();
 }
 
 // Стрелка
-arrow.addEventListener('click', function(e) {
-    let textBtn = document.querySelectorAll('.text-wrapper-2');
+arrow.addEventListener('click', arrowBehavior);
+
+function arrowBehavior(e) {
     currentPage++;
-    textBtn.forEach(item => {
-        item.innerHTML = Number(item.innerHTML) + 1;
-    });
-    if(Number(textBtn[2].innerText) * 4 >= news.length) {
-        arrow.style.display = 'none';
+    hideArrow(currentPage);
+    makeArrPages();
+    restartPagesBtn();
+
+        
+        
+    if(arr[2] < currentPage) {
+        console.log('last page');
+        document.querySelectorAll('.text-wrapper-2').forEach(item => {
+            item.innerText = Number(item.innerText) + 1;
+        })
+        makeArrPages();
+    }
+    btnPages = document.querySelectorAll('.div-wrapper');
+    try {
+        if (currentPage == arr[2]) {
+             btnPages[2].classList.add('active-page');
+        } else {
+            console.log(arr.indexOf(currentPage));
+            btnPages[arr.indexOf(String(currentPage))].classList.add('active-page');
+        }
+    }
+    catch {
+        console.log('Error');
     }
 
+    console.log(arr);
+    console.log('Current PAge ' + currentPage);
+
+    hideNews();
+    show4News(currentPage);
+}
+
+
+function makeArrPages() {
+    arr = [];
+    document.querySelectorAll('.text-wrapper-2').forEach(item => {
+        arr.push(item.innerText);
+    })
+    
+}
+
+//Сброс активных кнопок
+function restartPagesBtn() {
+    btnPages.forEach(item => {
+        if(item.classList.contains('active-page')) {
+            item.classList.remove('active-page');
+        }
+    })
+}
+
+function hideNews() {
     news.forEach(item => {
         item.style.display = 'none';
     });
+}
+
+function show4News(currentPage) {
     for(let i = x*currentPage-4; i < x*currentPage; i++) {
-        news[i].style.display = 'flex';
+        try {
+            news[i].style.display = 'flex';
+        }
+        catch {
+            break;
+        }
+        
+        
     }
-    document.querySelector(".main").scrollIntoView();
+}
+
+function hideArrow(currentPage) {
+    console.log("Hide Arrow");
     
-});
-
-
-
-
-console.log(news.length);
+    if (currentPage == 5) {
+        arrow.style.opacity = 0;
+        arrow.removeEventListener('click', arrowBehavior);
+    } else if (currentPage < 5) {
+        arrow.style.opacity = 1;
+        arrow.addEventListener('click', arrowBehavior);
+    }
+    
+}

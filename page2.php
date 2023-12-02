@@ -3,41 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="styleguide.css" />
-    <script src="script.js" defer></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/stylepage2.css" />
+    <link rel="stylesheet" href="styles/styleguide.css" />
+    <title>Галактический вестник</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <div>
+            <a href="index.php">
+                <div class="img-div-logo">
+                <img src="/img/logo.svg" alt="logo">
+            </div></a>
+            
+            <a href="index.php">
+                <div class="label">
+                <div class="text-wrapper">ГАЛАКТИЧЕСКИЙ <br />ВЕСТНИК</div>
+            </div></a>
+            
+        </div>
+        <div class="create-line"></div>
+        
+    </header>
     <div class="container">
-        <?php
-            $label = 'id';
-            $id = false;
-            if (  !empty( $_GET[ $label ] )  )
-            {
-              $id = $_GET[ $label ];
-            }
-
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-
-            $conn = new mysqli($servername, $username, $password, "testDB");
-
-            if($conn->connect_error) {
-                die("Connected failed");
-            }
-
-            $result = mysqli_query($conn, "SELECT * FROM `news` WHERE id = $id");
-
-            $row = mysqli_fetch_row($result);
-
-            print_r($row);
-        ?>
+        <?php include './php/page2_code.php' ?>
     </div>
     
-    <footer></footer>
+    <footer>
+        <div>
+            <div class="create-line-bottom"></div>
+            <p class="text-wrapper-footer">© 2023 — 2412 «Галактический вестник»</p>
+        </div>
+        
+    </footer>
     
 </body>
 </html>
