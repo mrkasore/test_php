@@ -17,7 +17,6 @@ btnPages.forEach(item => {
 });
 
 function changePage(e) {
-    console.log(e.target.innerText);
 
     btnPages = document.querySelectorAll('.div-wrapper');
     currentPage = e.target.innerText;
@@ -28,7 +27,6 @@ function changePage(e) {
     currentPage = Number(e.target.innerText);
     show4News(currentPage);
     
-    console.log(currentPage);
         
     document.querySelector(".main").scrollIntoView();
 }
@@ -45,7 +43,6 @@ function arrowBehavior(e) {
         
         
     if(arr[2] < currentPage) {
-        console.log('last page');
         document.querySelectorAll('.text-wrapper-2').forEach(item => {
             item.innerText = Number(item.innerText) + 1;
         })
@@ -56,7 +53,6 @@ function arrowBehavior(e) {
         if (currentPage == arr[2]) {
              btnPages[2].classList.add('active-page');
         } else {
-            console.log(arr.indexOf(currentPage));
             btnPages[arr.indexOf(String(currentPage))].classList.add('active-page');
         }
     }
@@ -64,8 +60,6 @@ function arrowBehavior(e) {
         console.log('Error');
     }
 
-    console.log(arr);
-    console.log('Current PAge ' + currentPage);
 
     hideNews();
     show4News(currentPage);
@@ -109,7 +103,6 @@ function show4News(currentPage) {
 }
 
 function hideArrow(currentPage) {
-    console.log("Hide Arrow");
     
     if (currentPage == 5) {
         arrow.style.opacity = 0;

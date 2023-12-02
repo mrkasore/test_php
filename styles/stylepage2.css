@@ -175,4 +175,7 @@ body {
     .main-title-article {
         font-size: 50px;
     }
+    .container>h1 {
+		font-size: 40px;
+	}
 }
